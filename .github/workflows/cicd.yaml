@@ -19,7 +19,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.andriifurmann }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         id: docker_build
@@ -28,6 +28,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/webinar:${{ github.sha }}
+          tags: ghcr.io/${{ github.andriifurmann }}/webinar:${{ github.sha }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
