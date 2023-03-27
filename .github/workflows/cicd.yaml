@@ -20,7 +20,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.andriifurmann }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.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 }}
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
